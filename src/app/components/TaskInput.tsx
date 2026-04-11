@@ -20,7 +20,7 @@ export default function TaskInput({ onAddTask }: Props) {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        className="flex-1 border-2 rounded p-2 mb-5 mr-2"
+        className="flex-1 border-2 rounded p-2 mb-20 mr-2"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Add a task..."
