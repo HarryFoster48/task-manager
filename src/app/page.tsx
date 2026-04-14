@@ -14,13 +14,21 @@ export default function Home() {
     };
     setTasks([...tasks, newTask]);
   }
+  function toggleTask(id: string) {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task,
+      ),
+    );
+  }
+
   return (
     <main className="flex flex-col min-h-screen items-center  bg-black">
       <h1 className="text-3xl font-bold py-20">Task Manager</h1>
       <TaskInput onAddTask={addTask} />
 
       <div className="w-full max-w-md">
-        <TaskList tasks={tasks} />
+        <TaskList tasks={tasks} onToggleTask={toggleTask} />
       </div>
     </main>
   );
